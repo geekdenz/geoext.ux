@@ -8,6 +8,13 @@
 
 Ext.namespace("GeoExt.ux")
 
+/*
+ * @include GeoExt/data/PrintPage.js
+ * @include GeoExt/plugins/PrintExtent.js
+ * @include GeoExt/plugins/PrintProviderField.js
+ * @include GeoExt/plugins/PrintPageField.js
+ */
+
 /** api: (define)
  *  module = GeoExt.form
  *  class = SimplePrint
