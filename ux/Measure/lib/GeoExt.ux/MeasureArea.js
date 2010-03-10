@@ -25,7 +25,23 @@ Ext.namespace("GeoExt.ux")
  *  JSBuild: OpenLayers/Handler/Polygon.js must be included.
  */
 GeoExt.ux.MeasureArea = Ext.extend(GeoExt.ux.Measure, {
+
+    /** api: config[handlerClass]
+     *  ``Function`` The handler class to pass to the measure control,
+     *  Defaults to ``OpenLayers.Handler.Polygon``. 
+     */
+
+    /** api: config[iconCls]
+     *  ``String`` The CSS class selector that specifies a background image 
+     *  to be used as the header icon for all components using this action 
+     *  Defaults to 'gx-map-measurearea'. 
+     */
     
+    /** api: config[template]
+     *  ``String`` | ``Ext.XTemplate`` HTML template, or Ext.XTemplate used
+     *  to display the measure. Optional.
+     */
+     
     /** private: method[constructor]
      */
     constructor: function(config) {

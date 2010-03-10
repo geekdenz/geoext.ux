@@ -25,7 +25,23 @@ Ext.namespace("GeoExt.ux")
  *  JSBuild: OpenLayers/Handler/Path.js must be included.
  */
 GeoExt.ux.MeasureLength = Ext.extend(GeoExt.ux.Measure, {
+
+    /** api: config[handlerClass]
+     *  ``Function`` The handler class to pass to the measure control,
+     *  Defaults to ``OpenLayers.Handler.Path``. 
+     */
+
+    /** api: config[iconCls]
+     *  ``String`` The CSS class selector that specifies a background image 
+     *  to be used as the header icon for all components using this action 
+     *  Defaults to 'gx-map-measurelength'. 
+     */
     
+    /** api: config[template]
+     *  ``String`` | ``Ext.XTemplate`` HTML template, or Ext.XTemplate used
+     *  to display the measure. Optional.
+     */
+     
     /** private: method[constructor]
      */
     constructor: function(config) {
