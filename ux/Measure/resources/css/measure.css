@@ -1,0 +1,6 @@
+.x-toolbar .gx-map-measurelength {
+    background: url('../images/ruler.png') top left no-repeat;
+}
+.x-toolbar .gx-map-measurearea {
+    background: url('../images/ruler_square.png') top left no-repeat;
+}
