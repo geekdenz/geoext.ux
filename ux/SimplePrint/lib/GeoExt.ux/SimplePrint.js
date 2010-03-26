@@ -198,13 +198,10 @@ GeoExt.ux.SimplePrint = Ext.extend(Ext.form.FormPanel, {
             })
         });
         this.initialConfig.hideRotation !== true && this.add({
-            xtype: "textfield",
+            xtype: "numberfield",
             fieldLabel: this.rotationText,
             name: "rotation",
             enableKeyEvents: true,
-            validator: function(v) {
-                return !isNaN(v)
-            },
             plugins: new GeoExt.plugins.PrintPageField({
                 printPage: this.printPage
             })
