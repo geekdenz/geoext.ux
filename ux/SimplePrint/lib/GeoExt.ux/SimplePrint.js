@@ -111,9 +111,10 @@ GeoExt.ux.SimplePrint = Ext.extend(Ext.form.FormPanel, {
             printProvider: this.initialConfig.printProvider,
             layer: this.initialConfig.layer
         });
-        this.printPage = this.printExtent.pages[0];
 
         this.mapPanel.initPlugin(this.printExtent);
+
+        this.printPage = this.printExtent.addPage();
 
         if (!this.busyMask) {
             this.busyMask = new Ext.LoadMask(Ext.getBody(), {
