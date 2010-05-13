@@ -2,9 +2,11 @@
 <html debug="true">
 <head>
 
-    <script type="text/javascript" src="http://extjs.cachefly.net/builds/ext-cdn-771.js"></script>
+    <script type="text/javascript" src="http://www.openlayers.org/api/2.9/OpenLayers.js"></script>
+    <script type="text/javascript" src="http://extjs.cachefly.net/ext-3.2.0/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="http://extjs.cachefly.net/ext-3.2.0/ext-all.js"></script>
     <script type="text/javascript" src="../../../../../../geoext/lib/GeoExt.js"></script>
-    <script type="text/javascript" src="../../../lib/GeoExt.ux.geonames/GeoNamesSearchCombo.js"></script>
+    <script type="text/javascript" src="../../../lib/GeoExt.ux/GeoNamesSearchCombo.js"></script>
 
     <script type="text/javascript">
         function test_ctor(t) {
@@ -16,12 +18,12 @@
 
             // test
 
-            c = new GeoExt.ux.geonames.GeoNamesSearchCombo({
+            c = new GeoExt.ux.GeoNamesSearchCombo({
                 renderTo: "GeoNamesSearch",
                 map: map
             });
-            t.ok(c instanceof GeoExt.ux.geonames.GeoNamesSearchCombo,
-                 "ctor creates a GeoExt.ux.geonames.GeoNamesSearchCombo object");
+            t.ok(c instanceof GeoExt.ux.GeoNamesSearchCombo,
+                 "ctor creates a GeoExt.ux.GeoNamesSearchCombo object");
             t.ok(c instanceof Ext.form.ComboBox,
                  "ctor creates an Ext.form.ComboBox object");
             t.ok(c.hasListener("select"),
@@ -30,7 +32,7 @@
                  "ctor sets map in instance");
             c.destroy();
 
-            c = new GeoExt.ux.geonames.GeoNamesSearchCombo({
+            c = new GeoExt.ux.GeoNamesSearchCombo({
                 renderTo: "GeoNamesSearch",
                 zoom: -1
             });

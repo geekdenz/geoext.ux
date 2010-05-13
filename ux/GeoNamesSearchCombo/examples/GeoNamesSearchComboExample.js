@@ -19,11 +19,11 @@ Ext.onReady(function() {
     var layer = new OpenLayers.Layer.OSM("OSM");
     map.addLayer(layer);
 
-    var geoNameSearchCombo = new GeoExt.ux.geonames.GeoNamesSearchCombo({
+    var geoNameSearchCombo = new GeoExt.ux.GeoNamesSearchCombo({
        map: map, zoom: 12
     });
 
-    new GeoExt.ux.geonames.GeoNamesSearchCombo({
+    new GeoExt.ux.GeoNamesSearchCombo({
        map: map,
        zoom: 8,
        renderTo: 'GeoNamesSearch'

@@ -12,9 +12,9 @@
  *  base_link = `Ext.form.ComboBox <http://extjs.com/deploy/dev/docs/?class=Ext.form.ComboBox>`_
  */
 
-Ext.namespace("GeoExt.ux.geonames");
+Ext.namespace("GeoExt.ux");
 
-GeoExt.ux.geonames.GeoNamesSearchCombo = Ext.extend(Ext.form.ComboBox, {
+GeoExt.ux.GeoNamesSearchCombo = Ext.extend(Ext.form.ComboBox, {
     /** api: config[map]
      *  ``OpenLayers.Map or Object``  A configured map or a configuration object
      *  for the map constructor, required only if :attr:`zoom` is set to
@@ -217,7 +217,7 @@ GeoExt.ux.geonames.GeoNamesSearchCombo = Ext.extend(Ext.form.ComboBox, {
     /** private: constructor
      */
     initComponent: function() {
-        GeoExt.ux.geonames.GeoNamesSearchCombo.superclass.initComponent.apply(this, arguments);
+        GeoExt.ux.GeoNamesSearchCombo.superclass.initComponent.apply(this, arguments);
 
         var urlAppendString = '';
 
@@ -312,4 +312,4 @@ GeoExt.ux.geonames.GeoNamesSearchCombo = Ext.extend(Ext.form.ComboBox, {
 });
 
 /** api: xtype = gxux_geonamessearchcombo */
-Ext.reg('gxux_geonamessearchcombo', GeoExt.ux.geonames.GeoNamesSearchCombo);
+Ext.reg('gxux_geonamessearchcombo', GeoExt.ux.GeoNamesSearchCombo);
