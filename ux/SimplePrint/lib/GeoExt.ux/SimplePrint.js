@@ -18,7 +18,7 @@ Ext.namespace("GeoExt.ux")
 /** api: (define)
  *  module = GeoExt.form
  *  class = SimplePrint
- *  base_link = `Ext.form.FormPanel <http://extjs.com/deploy/dev/docs/?class=Ext.form.FormPanel>`_
+ *  base_link = `Ext.form.FormPanel <http://dev.sencha.com/deploy/dev/docs/?class=Ext.form.FormPanel>`_
  */
 
 /** api: constructor

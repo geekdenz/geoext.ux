@@ -9,7 +9,7 @@
 /** api: (define)
  *  module = GeoExt.ux
  *  class = GeoNamesSearchCombo
- *  base_link = `Ext.form.ComboBox <http://extjs.com/deploy/dev/docs/?class=Ext.form.ComboBox>`_
+ *  base_link = `Ext.form.ComboBox <http://dev.sencha.com/deploy/dev/docs/?class=Ext.form.ComboBox>`_
  */
 
 Ext.namespace("GeoExt.ux");
@@ -26,25 +26,25 @@ GeoExt.ux.GeoNamesSearchCombo = Ext.extend(Ext.form.ComboBox, {
     map: null,
 
     /** api: config[width]
-     *  See http://www.extjs.com/deploy/dev/docs/source/BoxComponent.html#cfg-Ext.BoxComponent-width,
+     *  See http://www.dev.sencha.com/deploy/dev/docs/source/BoxComponent.html#cfg-Ext.BoxComponent-width,
      *  default value is 350.
      */
     width: 350,
 
     /** api: config[listWidth]
-     *  See http://www.extjs.com/deploy/dev/docs/source/Combo.html#cfg-Ext.form.ComboBox-listWidth,
+     *  See http://www.dev.sencha.com/deploy/dev/docs/source/Combo.html#cfg-Ext.form.ComboBox-listWidth,
      *  default value is 350.
      */
     listWidth: 350,
 
     /** api: config[loadingText]
-     *  See http://www.extjs.com/deploy/dev/docs/source/Combo.html#cfg-Ext.form.ComboBox-loadingText,
+     *  See http://www.dev.sencha.com/deploy/dev/docs/source/Combo.html#cfg-Ext.form.ComboBox-loadingText,
      *  default value is "Search in Geonames...".
      */
     loadingText: 'Search in Geonames...',
 
     /** api: config[emptyText]
-     *  See http://www.extjs.com/deploy/dev/docs/source/TextField.html#cfg-Ext.form.TextField-emptyText,
+     *  See http://www.dev.sencha.com/deploy/dev/docs/source/TextField.html#cfg-Ext.form.TextField-emptyText,
      *  default value is "Search location in Geonames".
      */
     emptyText: 'Search location in Geonames',
@@ -81,7 +81,7 @@ GeoExt.ux.GeoNamesSearchCombo = Ext.extend(Ext.form.ComboBox, {
 
     /** api: config[tpl]
      *  ``Ext.XTemplate or String`` Template for presenting the result in the
-     *  list (see http://www.extjs.com/deploy/dev/docs/output/Ext.XTemplate.html),
+     *  list (see http://www.dev.sencha.com/deploy/dev/docs/output/Ext.XTemplate.html),
      *  if not set a default value is provided.
      */
     tpl: '<tpl for="."><div class="x-combo-list-item"><h1>{name}<br></h1>{fcodeName} - {countryName}</div></tpl>',

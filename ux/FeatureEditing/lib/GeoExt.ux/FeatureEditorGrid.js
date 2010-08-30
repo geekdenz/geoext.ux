@@ -16,7 +16,7 @@ Ext.namespace("GeoExt.ux");
 /** api: (define)
  *  module = GeoExt.ux
  *  class = FeatureEditorGrid
- *  base_link = `Ext.grid.EditorGridPanel <http://www.extjs.com/deploy/dev/docs/?class=Ext.grid.EditorGridPanel>`_
+ *  base_link = `Ext.grid.EditorGridPanel <http://www.dev.sencha.com/deploy/dev/docs/?class=Ext.grid.EditorGridPanel>`_
  */
 
 /** api: constructor
