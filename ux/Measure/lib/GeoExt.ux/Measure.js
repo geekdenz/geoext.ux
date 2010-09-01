@@ -6,7 +6,7 @@
  * of the license.
  */
 
-Ext.namespace("GeoExt.ux")
+Ext.namespace("GeoExt.ux");
 
 /*
  * @requires GeoExt/widgets/Action.js
