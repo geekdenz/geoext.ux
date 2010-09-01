@@ -6,7 +6,7 @@
  * of the license.
  */
 
-Ext.namespace("GeoExt.ux")
+Ext.namespace("GeoExt.ux");
 
 /*
  * @include GeoExt/data/PrintPage.js
@@ -223,7 +223,7 @@ GeoExt.ux.SimplePrint = Ext.extend(Ext.form.FormPanel, {
             this.mapPanel.map.events.on({
                 "moveend": this.onMoveend,
                 scope: this
-            })
+            });
         }
     },
     
@@ -244,7 +244,7 @@ GeoExt.ux.SimplePrint = Ext.extend(Ext.form.FormPanel, {
             this.mapPanel.map.events.un({
                 "moveend": this.onMoveend,
                 scope: this
-            })
+            });
         }
         GeoExt.ux.SimplePrint.superclass.beforeDestroy.apply(this, arguments);
     },
