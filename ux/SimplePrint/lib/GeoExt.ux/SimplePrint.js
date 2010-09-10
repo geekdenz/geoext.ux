@@ -139,19 +139,19 @@ GeoExt.ux.SimplePrint = Ext.extend(Ext.form.FormPanel, {
         }        
 
         //for accordion
-        this.on('expand', this.setUp, this);
-        this.on('collapse', this.tearDown, this);
+        this.on('expand', this.showExtent, this);
+        this.on('collapse', this.hideExtent, this);
 
         //for tabs
-        this.on('activate', this.setUp, this);
-        this.on('deactivate', this.tearDown, this);
+        this.on('activate', this.showExtent, this);
+        this.on('deactivate', this.hideExtent, this);
 
         //for manual enable/disable
-        this.on('enable', this.setUp, this);
-        this.on('disable', this.tearDown, this);
+        this.on('enable', this.showExtent, this);
+        this.on('disable', this.hideExtent, this);
 
         //for use in an Ext.Window with closeAction close
-        this.on('destroy', this.tearDown, this);
+        this.on('destroy', this.hideExtent, this);
     },
     
     /** private: method[initForm]
@@ -249,18 +249,18 @@ GeoExt.ux.SimplePrint = Ext.extend(Ext.form.FormPanel, {
         GeoExt.ux.SimplePrint.superclass.beforeDestroy.apply(this, arguments);
     },
 
-    /** private: method[setUp]
+    /** private: method[showExtent]
      * Handler for the panel's expand/activate/enable event
      */
-    setUp: function() {
-        this.printExtent.setUp();
+    showExtent: function() {
+        this.printExtent.show();
     },
 
-    /** private: method[tearDown]
+    /** private: method[hideExtent]
      * Handler for the panel's collapse/deactivate/disable/destroy event
      */
-    tearDown: function() {
-        this.printExtent.tearDown();
+    hideExtent: function() {
+        this.printExtent.hide();
     }
 });
 
