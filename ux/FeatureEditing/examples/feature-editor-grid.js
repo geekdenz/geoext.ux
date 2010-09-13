@@ -135,7 +135,7 @@ Ext.onReady(function() {
 
     var wmsLayer = new OpenLayers.Layer.WMS(
         "vmap0",
-        "http://labs.metacarta.com/wms/vmap0",
+        "http://vmap0.tiles.osgeo.org/wms/vmap0",
         {layers: 'basic'}
     );
     var vecLayer = createVectorLayer();
