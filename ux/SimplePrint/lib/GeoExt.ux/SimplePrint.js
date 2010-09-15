@@ -231,7 +231,7 @@ GeoExt.ux.SimplePrint = Ext.extend(Ext.form.FormPanel, {
      *  Handler for the map's moveend event
      */
     onMoveend: function() {
-        this.printPage.fit(this.mapPanel.map);
+        this.printPage.fit(this.mapPanel.map, {mode: "screen"});
     },
     
     /** private: method[beforeDestroy]
