@@ -9,11 +9,9 @@ Ext.onReady(function() {
         //method: "POST",
         
         // capabilities from script tag in Printing.html. For asynchonous
-        // loading, we would configure url (and autoLoad) instead of
-        // capabilities.
+        // loading, we would configure url instead of capabilities.
         capabilities: printCapabilities
-        //url: "/geoserver/pdf/",
-        //autoLoad: true
+        //url: "/geoserver/pdf/"
     });
     
     var mapPanel = new GeoExt.MapPanel({
