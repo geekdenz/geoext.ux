@@ -41,6 +41,11 @@ GeoExt.ux.MeasureLength = Ext.extend(GeoExt.ux.Measure, {
      *  ``String`` | ``Ext.XTemplate`` HTML template, or Ext.XTemplate used
      *  to display the measure. Optional.
      */
+
+    /** api: config[tooltip]
+     *  ``String`` The tooltip for the button. Defaults to "Length measurement".
+     */
+    tooltip: 'Length measurement',
      
     /** private: method[constructor]
      */
@@ -48,7 +53,7 @@ GeoExt.ux.MeasureLength = Ext.extend(GeoExt.ux.Measure, {
         config = Ext.apply({
             handlerClass: OpenLayers.Handler.Path,
             iconCls: 'gx-map-measurelength',
-            tooltip: "Length measurement",
+            tooltip: this.tooltip,
             template: '<p>{[values.measure.toFixed(this.decimals)]}&nbsp;'+
                 '{units}</p>'
         }, config);

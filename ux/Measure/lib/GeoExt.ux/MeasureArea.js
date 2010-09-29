@@ -41,6 +41,11 @@ GeoExt.ux.MeasureArea = Ext.extend(GeoExt.ux.Measure, {
      *  ``String`` | ``Ext.XTemplate`` HTML template, or Ext.XTemplate used
      *  to display the measure. Optional.
      */
+
+    /** api: config[tooltip]
+     *  ``String`` The tooltip for the button. Defaults to "Area measurement".
+     */
+    tooltip: 'Area measurement',
      
     /** private: method[constructor]
      */
@@ -48,7 +53,7 @@ GeoExt.ux.MeasureArea = Ext.extend(GeoExt.ux.Measure, {
         config = Ext.apply({
             handlerClass: OpenLayers.Handler.Polygon,
             iconCls: 'gx-map-measurearea',
-            tooltip: "Area measurement",
+            tooltip: this.tooltip,
             template: '<p>{[values.measure.toFixed(this.decimals)]}&nbsp;'+
                 '{units}<sup>2</sup></p>'
         }, config);
