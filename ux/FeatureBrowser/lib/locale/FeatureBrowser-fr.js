@@ -6,6 +6,10 @@
  * of the license.
  */
 
+/**
+ * @requires GeoExt/Lang.js
+ */
+
 GeoExt.Lang.add("fr", {
     "GeoExt.ux.FeatureBrowser.prototype": {
         counterText: "composant {0} sur {1}"

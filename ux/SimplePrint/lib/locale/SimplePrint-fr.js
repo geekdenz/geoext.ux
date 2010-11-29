@@ -6,6 +6,10 @@
  * of the license.
  */
 
+/**
+ * @requires GeoExt/Lang.js
+ */
+
 GeoExt.Lang.add("fr", {
     "GeoExt.ux.SimplePrint.prototype": {
         layoutText: "Disposition",
