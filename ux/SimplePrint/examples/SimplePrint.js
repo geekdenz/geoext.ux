@@ -16,15 +16,6 @@ Ext.onReady(function() {
         //autoLoad: true
     });
     
-    var mapPanel = new GeoExt.MapPanel({
-        region: "center",
-        layers: [new OpenLayers.Layer.WMS("Global Imagery",
-            "http://vmap0.tiles.osgeo.org/wms/vmap0",
-            {layers: "basic"})],
-        center: [16,48],
-        zoom: 5
-    });
-
     // create a vector layer, which will also be printed.
     var redline = new OpenLayers.Layer.Vector("vector", {
         styleMap: new OpenLayers.StyleMap({
@@ -36,13 +27,21 @@ Ext.onReady(function() {
             externalGraphic: "http://openlayers.org/dev/img/marker-blue.png"
         })
     });
+    var mapPanel = new GeoExt.MapPanel({
+        region: "center",
+        layers: [new OpenLayers.Layer.WMS("Global Imagery",
+            "http://vmap0.tiles.osgeo.org/wms/vmap0",
+            {layers: "basic"}), redline],
+        center: [16,48],
+        zoom: 5
+    });
+
     var geom = OpenLayers.Geometry.fromWKT, Vec = OpenLayers.Feature.Vector;
     redline.addFeatures([
         new Vec(geom("POLYGON(15 47, 15 46, 16 47, 16 48)")),
         new Vec(geom("LINESTRING(14 48, 14 47, 15 48, 14 49, 16 49)")),
         new Vec(geom("POINT(16 49)"))
     ]);
-    mapPanel.map.addLayer(redline);
     
     // Create a vector layer for the print page extent and handles.
     // We only do this because we want fancy styles for the handles,
