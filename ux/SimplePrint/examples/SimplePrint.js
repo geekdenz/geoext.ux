@@ -85,26 +85,7 @@ Ext.onReady(function() {
         width: 200
     });
 
-    // add custom fields to the form
-    printForm.insert(0, {
-        xtype: "textfield",
-        name: "mapTitle",
-        fieldLabel: "Title",
-        value: "A custom title",
-        plugins: new GeoExt.plugins.PrintPageField({
-            printPage: printForm.printPage
-        })
-    });
-    printForm.insert(1, {
-        xtype: "textarea",
-        fieldLabel: "Comment",
-        name: "comment",
-        value: "A custom comment",
-        plugins: new GeoExt.plugins.PrintPageField({
-            printPage: printForm.printPage
-        })
-    });
-    
+   
     var formCt = new Ext.Panel({
         layout: "fit",
         region: "east",
@@ -119,21 +100,48 @@ Ext.onReady(function() {
         items: [mapPanel, formCt]
     });
     
-    /* add the print form to its container and make sure that the print page
-     * fits the max extent
-     */
-    formCt.add(printForm);
-    formCt.doLayout();
+    // This function is to called once the print capabilities
+    // are loaded. So if the print provider is configured with
+    // a URL instead of capabilities then this function must
+    // be called on "loadcapabilities" from the print provider.
+    // See below.
+    function onLoadCaps() {
+        // add custom fields to the form
+        printForm.insert(0, {
+            xtype: "textfield",
+            name: "mapTitle",
+            fieldLabel: "Title",
+            value: "A custom title",
+            plugins: new GeoExt.plugins.PrintPageField({
+                printPage: printForm.printPage
+            })
+        });
+        printForm.insert(1, {
+            xtype: "textarea",
+            fieldLabel: "Comment",
+            name: "comment",
+            value: "A custom comment",
+            plugins: new GeoExt.plugins.PrintPageField({
+                printPage: printForm.printPage
+            })
+        });
+        // add the print form to its container
+        formCt.add(printForm);
+        formCt.doLayout();
+    }
 
-    /* use this code block instead of the above one if you configured the
+    // comment this line and uncomment the code block that follows
+    // if the print provider is configured with a URL instead of
+    // capabilities
+    onLoadCaps();
+
+    /* use this code block instead of the above line if you configured the
      * printProvider with url instead of capabilities
     var myMask = new Ext.LoadMask(formCt.body, {msg:"Loading data..."});
     myMask.show();
     printProvider.on("loadcapabilities", function() {
         myMask.hide();
-        formCt.add(printForm);
-        formCt.doLayout();
+        onLoadCaps();
     });
      */
-    
 });
