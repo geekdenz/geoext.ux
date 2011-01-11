@@ -170,7 +170,9 @@ GeoExt.ux.SimplePrint = Ext.extend(Ext.form.FormPanel, {
             forceSelection: true,
             triggerAction: "all",
             selectOnFocus: true,
-            plugins: new GeoExt.plugins.PrintProviderField()
+            plugins: new GeoExt.plugins.PrintProviderField({
+                printProvider: p
+            })
         });
         !(hideUnique && p.dpis.getCount() <= 1) && this.add({
             xtype: "combo",
@@ -182,7 +184,9 @@ GeoExt.ux.SimplePrint = Ext.extend(Ext.form.FormPanel, {
             forceSelection: true,
             triggerAction: "all",
             selectOnFocus: true,
-            plugins: new GeoExt.plugins.PrintProviderField()
+            plugins: new GeoExt.plugins.PrintProviderField({
+                printProvider: p
+            })
         });
         !(hideUnique && p.scales.getCount() <= 1) && this.add({
             xtype: "combo",
