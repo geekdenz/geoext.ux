@@ -106,15 +106,15 @@ GeoExt.ux.SimplePrint = Ext.extend(Ext.form.FormPanel, {
      */
     initComponent: function() {
         GeoExt.ux.SimplePrint.superclass.initComponent.call(this);
+
+        this.printPage = new GeoExt.data.PrintPage({
+            printProvider: this.initialConfig.printProvider
+        });
         
         this.printExtent = new GeoExt.plugins.PrintExtent({
-            printProvider: this.initialConfig.printProvider,
+            pages: [this.printPage],
             layer: this.initialConfig.layer
         });
-
-        this.mapPanel.initPlugin(this.printExtent);
-
-        this.printPage = this.printExtent.addPage();
 
         if (!this.busyMask) {
             this.busyMask = new Ext.LoadMask(Ext.getBody(), {
@@ -158,6 +158,7 @@ GeoExt.ux.SimplePrint = Ext.extend(Ext.form.FormPanel, {
      *  Creates and adds items to the form.
      */
     initForm: function() {
+        this.mapPanel.initPlugin(this.printExtent);
         var p = this.printExtent.printProvider;
         var hideUnique = this.initialConfig.hideUnique !== false;
         !(hideUnique && p.layouts.getCount() <= 1) && this.add({
