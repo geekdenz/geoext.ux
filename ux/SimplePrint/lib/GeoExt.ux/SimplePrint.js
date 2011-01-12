@@ -105,6 +105,15 @@ GeoExt.ux.SimplePrint = Ext.extend(Ext.form.FormPanel, {
     /** private: method[initComponent]
      */
     initComponent: function() {
+
+        // This is a workaround for an Ext issue. When the SimplePrint
+        // is an accordion's item an error occurs on expand if
+        // the fbar is created later, i.e. outside initComponent. So the
+        // problem triggers when the capabilities are loaded using
+        // XHR. The workaround involves forcing the creation of
+        // the fbar as part of initComponent.
+        this.fbar = this.fbar || [];
+
         GeoExt.ux.SimplePrint.superclass.initComponent.call(this);
 
         this.printPage = new GeoExt.data.PrintPage({
