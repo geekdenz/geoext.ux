@@ -7,7 +7,7 @@ Ext.onReady(function() {
         new OpenLayers.Feature.Vector(null, {
             name: 'toto',
             age: '20',
-            photo: 'http://bits.ohloh.net/attachments/30093/GeoExt_med.png',
+            photo: 'http://cloud.ohloh.net/attachments/30093/GeoExt_med.png',
             type: 'employee'
         }),
         new OpenLayers.Feature.Vector(null, {
