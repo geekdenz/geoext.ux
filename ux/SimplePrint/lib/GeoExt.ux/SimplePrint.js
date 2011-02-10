@@ -101,7 +101,20 @@ GeoExt.ux.SimplePrint = Ext.extend(Ext.form.FormPanel, {
      *  e.g. for rotating handles when used in a style map context. Read-only.
      */
     printPage: null,
-   
+
+    /** api: config[comboOptions]
+     *  ``Object`` Optional options for the comboboxes. If not provided, the
+     *  following will be used:
+     *
+     *  .. code-block:: javascript
+     *
+     *      {
+     *          typeAhead: true,
+     *          selectOnFocus: true
+     *      }
+     */
+    comboOptions: null,
+    
     /** private: method[initComponent]
      */
     initComponent: function() {
@@ -170,48 +183,47 @@ GeoExt.ux.SimplePrint = Ext.extend(Ext.form.FormPanel, {
         this.mapPanel.initPlugin(this.printExtent);
         var p = this.printExtent.printProvider;
         var hideUnique = this.initialConfig.hideUnique !== false;
-        !(hideUnique && p.layouts.getCount() <= 1) && this.add({
+        var cbOptions = this.comboOptions || {
+            typeAhead: true,
+            selectOnFocus: true
+        };
+        
+        !(hideUnique && p.layouts.getCount() <= 1) && this.add(Ext.applyIf({
             xtype: "combo",
             fieldLabel: this.layoutText,
             store: p.layouts,
-            displayField: "name",
-            typeAhead: true,
-            mode: "local",
             forceSelection: true,
+            displayField: "name",
+            mode: "local",
             triggerAction: "all",
-            selectOnFocus: true,
             plugins: new GeoExt.plugins.PrintProviderField({
                 printProvider: p
             })
-        });
-        !(hideUnique && p.dpis.getCount() <= 1) && this.add({
+        }, cbOptions));
+        !(hideUnique && p.dpis.getCount() <= 1) && this.add(Ext.applyIf({
             xtype: "combo",
             fieldLabel: this.dpiText,
             store: p.dpis,
-            displayField: "name",
-            typeAhead: true,
-            mode: "local",
             forceSelection: true,
+            displayField: "name",
+            mode: "local",
             triggerAction: "all",
-            selectOnFocus: true,
             plugins: new GeoExt.plugins.PrintProviderField({
                 printProvider: p
             })
-        });
-        !(hideUnique && p.scales.getCount() <= 1) && this.add({
+        }, cbOptions));
+        !(hideUnique && p.scales.getCount() <= 1) && this.add(Ext.applyIf({
             xtype: "combo",
             fieldLabel: this.scaleText,
             store: p.scales,
-            displayField: "name",
-            typeAhead: true,
-            mode: "local",
             forceSelection: true,
+            displayField: "name",
+            mode: "local",
             triggerAction: "all",
-            selectOnFocus: true,
             plugins: new GeoExt.plugins.PrintPageField({
                 printPage: this.printPage
             })
-        });
+        }, cbOptions));
         this.initialConfig.hideRotation !== true && this.add({
             xtype: "numberfield",
             fieldLabel: this.rotationText,
