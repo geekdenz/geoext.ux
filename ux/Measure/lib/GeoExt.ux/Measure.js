@@ -43,6 +43,11 @@ GeoExt.ux.Measure = Ext.extend(GeoExt.Action, {
     /** api: config[controlOptions]
      *  ``Object`` Options to pass to the Measure control. Optional.
      */
+
+    /** api: config[autoDeactivate]
+     *  ``Boolean`` Should the measure control be deactivated when closing
+     *      the measurement tip. Optional. Defaults to false.
+     */
     
     /** private: property[tip]
      *  ``Ext.Tip`` The displayed tip.
@@ -86,6 +91,8 @@ GeoExt.ux.Measure = Ext.extend(GeoExt.Action, {
         }
         delete config.template;
         delete config.decimals;
+        this.autoDeactivate = config.autoDeactivate || false;
+        delete config.autoDeactivate;
         arguments.callee.superclass.constructor.call(this, config);
     },
 
@@ -154,6 +161,9 @@ GeoExt.ux.Measure = Ext.extend(GeoExt.Action, {
             listeners: {
                 hide: function() {
                     this.control.cancel();
+                    if (this.autoDeactivate === true) {
+                        this.control.deactivate();
+                    }
                     this.cleanup();
                 },
                 scope: this
