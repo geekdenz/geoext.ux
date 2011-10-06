@@ -188,7 +188,7 @@ GeoExt.ux.SimplePrint = Ext.extend(Ext.form.FormPanel, {
             selectOnFocus: true
         };
         
-        !(hideUnique && p.layouts.getCount() <= 1) && this.add(Ext.applyIf({
+        !(hideUnique && p.layouts.getCount() <= 1) && this.add(Ext.apply({
             xtype: "combo",
             fieldLabel: this.layoutText,
             store: p.layouts,
@@ -200,7 +200,7 @@ GeoExt.ux.SimplePrint = Ext.extend(Ext.form.FormPanel, {
                 printProvider: p
             })
         }, cbOptions));
-        !(hideUnique && p.dpis.getCount() <= 1) && this.add(Ext.applyIf({
+        !(hideUnique && p.dpis.getCount() <= 1) && this.add(Ext.apply({
             xtype: "combo",
             fieldLabel: this.dpiText,
             store: p.dpis,
@@ -212,7 +212,7 @@ GeoExt.ux.SimplePrint = Ext.extend(Ext.form.FormPanel, {
                 printProvider: p
             })
         }, cbOptions));
-        !(hideUnique && p.scales.getCount() <= 1) && this.add(Ext.applyIf({
+        !(hideUnique && p.scales.getCount() <= 1) && this.add(Ext.apply({
             xtype: "combo",
             fieldLabel: this.scaleText,
             store: p.scales,

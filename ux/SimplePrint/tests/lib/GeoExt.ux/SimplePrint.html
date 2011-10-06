@@ -44,6 +44,29 @@
             mapPanel.destroy();
         }
 
+        function test_comboOptions(t) {
+
+            var printForm = new GeoExt.ux.SimplePrint({
+                mapPanel:  new GeoExt.MapPanel({
+                    renderTo: "mappanel"
+                }),
+                printProvider: new GeoExt.data.PrintProvider({
+                    capabilities: printCapabilities
+                }),
+                comboOptions: {
+                    foo: 'bar',
+                    displayField: 'baz',
+                }
+            });
+
+            var comboboxes = printForm.items.filter('xtype', 'combo');
+            t.plan(comboboxes.getCount() * 2);
+            comboboxes.each(function(combo) {
+                t.eq(combo.foo, 'bar', 'combo.foo is set');
+                t.eq(combo.displayField, 'baz', 'combo.displayField is set');
+            });
+            printForm.destroy();
+        }
     </script>
   <body>
     <div id="mappanel"></div>
